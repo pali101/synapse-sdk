@@ -39,7 +39,10 @@ async function fetchDirectAbi(contract: ContractConfig): Promise<{ body: string 
  */
 async function fetchProxyAbi(contract: ContractConfig): Promise<{ body: string }> {
   // 1. Fetch the implementation address from the proxy contract.
-  const proxyUrl = `https://filfox.info/api/v1/address/${contract.address}/contract`
+  const proxyUrl =
+    contract.chainId === 314
+      ? `https://filfox.info/api/v1/address/${contract.address}/contract`
+      : `https://calibration.filfox.info/api/v1/address/${contract.address}/contract`
   const proxyResponse = await fetch(proxyUrl, {
     headers: { Accept: 'application/json' },
   })
@@ -59,7 +62,10 @@ async function fetchProxyAbi(contract: ContractConfig): Promise<{ body: string }
 // Internal helper to fetch and parse ABI from Filfox for a given address
 async function fetchAbiFromAddress(address: Address, name: string, chainId: number): Promise<{ body: string }> {
   try {
-    const url = `https://filfox.info/api/v1/address/${address}/contract`
+    const url =
+      chainId === 314
+        ? `https://filfox.info/api/v1/address/${address}/contract`
+        : `https://calibration.filfox.info/api/v1/address/${address}/contract`
     const response = await fetch(url, {
       headers: { Accept: 'application/json' },
     })
