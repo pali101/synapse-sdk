@@ -15,39 +15,44 @@ const createConfig = async (): Promise<Config[]> => {
         314159: '0x6dB198201F900c17e86D267d7Df82567FB03df5E' as Address,
       },
     },
-    // {
-    //   name: 'FilecoinWarmStorageService',
-    //   address: {
-    //     314: '0x0000000000000000000000000000000000000000' as Address,
-    //     314159: '0x0000000000000000000000000000000000000000' as Address,
-    //   },
-    // },
-    // {
-    //   name: 'FilecoinWarmStorageServiceStateView',
-    //   address: {
-    //     314: '0x0000000000000000000000000000000000000000' as Address,
-    //     314159: '0x0000000000000000000000000000000000000000' as Address,
-    //   },
-    // },
-    // {
-    //   name: 'PDPVerifier',
-    //   address: {
-    //     314: '0x0000000000000000000000000000000000000000' as Address,
-    //     314159: '0x0000000000000000000000000000000000000000' as Address,
-    //   },
-    // },
+    {
+      name: 'FilecoinWarmStorageService',
+      isProxy: true,
+      address: {
+        314: '0x0000000000000000000000000000000000000000' as Address,
+        314159: '0x468342072e0dc86AFFBe15519bc5B1A1aa86e4dc' as Address,
+      },
+    },
+    {
+      name: 'FilecoinWarmStorageServiceStateView',
+      isProxy: false,
+      address: {
+        314: '0x0000000000000000000000000000000000000000' as Address,
+        314159: '0xE4587AAdB97d7B8197aa08E432bAD0D9Cfe3a17F' as Address,
+      },
+    },
+    {
+      name: 'PDPVerifier',
+      isProxy: true,
+      address: {
+        314: '0x0000000000000000000000000000000000000000' as Address,
+        314159: '0x579dD9E561D4Cd1776CF3e52E598616E77D5FBcb' as Address,
+      },
+    },
     // {
     //   name: 'ServiceProviderRegistry',
+    //   isProxy: true,
     //   address: {
     //     314: '0x0000000000000000000000000000000000000000' as Address,
-    //     314159: '0x0000000000000000000000000000000000000000' as Address,
+    //     314159: '0x1096ba1e7BB912136DA8524A22bF71091dc4FDd9' as Address,
     //   },
     // },
     // {
     //   name: 'SessionKeyRegistry',
+    //   isProxy: false,
     //   address: {
     //     314: '0x0000000000000000000000000000000000000000' as Address,
-    //     314159: '0x0000000000000000000000000000000000000000' as Address,
+    //     314159: '0x97Dd879F5a97A8c761B94746d7F5cfF50AAd4452' as Address,
     //   },
     // },
     {
